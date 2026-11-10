@@ -1,14 +1,13 @@
 {
   "name": "shovon-share-zone",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "A modern file sharing app with expiring share links and optional password protection.",
-  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
+  "description": "Owner-managed public photo gallery and sharing website",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
   "engines": { "node": ">=20" },
   "dependencies": {
     "express": "^4.21.2",
-    "express-rate-limit": "^7.5.0",
-    "helmet": "^8.0.0",
     "multer": "^1.4.5-lts.1"
   }
 }
