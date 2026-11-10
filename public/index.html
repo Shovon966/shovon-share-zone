@@ -1,58 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f6f7fb">
-  <meta name="description" content="SHOVON SHARE ZONE — share files simply, securely, and beautifully.">
-  <title>SHOVON SHARE ZONE — Send files, simply.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10131b"><title>SHOVON SHARE ZONE</title>
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="/"><span class="brand-mark">S</span><span>SHOVON SHARE ZONE</span></a>
-    <nav><a href="#how">How it works</a><a href="#features">Features</a><a class="nav-cta" href="#transfer">Start sharing <span>↗</span></a></nav>
-  </header>
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="eyebrow-dot"></span> THE SIMPLE WAY TO SHARE</div>
-        <h1>Big files.<br><span class="gradient-text">Zero friction.</span></h1>
-        <p class="hero-sub">Your files deserve a better way to travel. Send photos, videos and documents with one simple link.</p>
-        <div class="hero-points"><span>✦ No account needed</span><span>✦ Private by design</span></div>
-      </div>
-      <div class="upload-card" id="transfer">
-        <div class="card-top"><div><span class="card-kicker">YOUR TRANSFER</span><h2>Drop it like it's hot.</h2></div><div class="upload-icon">↑</div></div>
-        <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose files or drag them here">
-          <div class="cloud-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34h21a9 9 0 0 0 0-18 12 12 0 0 0-23-2 10 10 0 0 0 2 20Z"/><path d="M24 30V19m-5 5 5-5 5 5"/></svg></div>
-          <strong>Drag & drop your files here</strong><span>or <button type="button" class="text-button" id="browse">browse files</button></span>
-          <small>Up to 20 files · 2 GB per file</small>
-        </div>
-        <input type="file" id="fileInput" multiple hidden>
-        <div id="fileList" class="file-list"></div>
-        <div class="options">
-          <label><span>Link expires in</span><select id="expiry"><option value="1">1 day</option><option value="3">3 days</option><option value="7" selected>7 days</option><option value="14">14 days</option><option value="30">30 days</option></select></label>
-          <label><span>Password <em>(optional)</em></span><input id="password" type="password" maxlength="100" placeholder="Add a password"></label>
-        </div>
-        <button id="sendBtn" class="send-button" disabled>Get transfer link <span>↗</span></button>
-        <div id="status" class="status" aria-live="polite"></div>
-        <div id="result" class="result" hidden></div>
-        <p class="fineprint"><span>◈</span> Your files are stored on this server and deleted after expiry.</p>
-      </div>
-      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
-    </section>
-    <section class="trust-strip"><span>MADE FOR THE MOMENTS THAT MATTER</span><div><b>01</b> SIMPLE <i>✳</i><b>02</b> FAST <i>✳</i><b>03</b> YOURS</div></section>
-    <section class="features" id="features">
-      <div class="section-heading"><div class="eyebrow">LESS WAITING, MORE DOING</div><h2>Sharing should feel <span class="gradient-text">this easy.</span></h2></div>
-      <div class="feature-grid">
-        <article class="feature"><div class="feature-icon lilac">↗</div><h3>One link. That's it.</h3><p>Upload once and share a single link. No account or complicated setup required.</p></article>
-        <article class="feature"><div class="feature-icon mint">⌁</div><h3>Your files, your rules.</h3><p>Choose when your transfer expires and add a password for an extra layer of privacy.</p></article>
-        <article class="feature"><div class="feature-icon peach">ϟ</div><h3>Made to move.</h3><p>A clean, focused experience that keeps the process quick from upload to download.</p></article>
-      </div>
-    </section>
-    <section class="how" id="how"><div><div class="eyebrow">THREE LITTLE STEPS</div><h2>From here<br>to <span class="gradient-text">there.</span></h2></div><div class="steps"><div><b>01</b><section><h3>Pick your files</h3><p>Drag them in or browse your device.</p></section></div><div><b>02</b><section><h3>Make it yours</h3><p>Set an expiry date and optional password.</p></section></div><div><b>03</b><section><h3>Share the link</h3><p>Copy it, send it, and you're done.</p></section></div></div></section>
-  </main>
-  <footer><a class="brand" href="/"><span class="brand-mark">S</span><span>SHOVON SHARE ZONE</span></a><span>Made for moving things forward. © <span id="year"></span> SHOVON SHARE ZONE</span></footer>
-  <script src="/app.js"></script>
+<header class="top"><a class="brand" href="/"><span class="brandmark">S</span><span>SHOVON <b>SHARE ZONE</b></span></a><a class="adminlink" href="/admin.html">Admin</a></header>
+<main>
+<section class="hero"><p class="eyebrow">A PERSONAL PHOTO SPACE</p><h1>Moments worth<br><em>sharing.</em></h1><p class="intro">Explore the gallery. Open a photo, view it in full size, or download it with one tap.</p></section>
+<section class="gallery-head"><div><p class="eyebrow">THE COLLECTION</p><h2>Photo gallery</h2></div><span id="count" class="count">Loading…</span></section>
+<div id="gallery" class="grid" aria-live="polite"></div>
+<p id="empty" class="empty" hidden>No photos have been added yet.</p>
+</main>
+<footer>© <span id="year"></span> SHOVON SHARE ZONE</footer>
+<div id="viewer" class="viewer" hidden><button id="close" class="close" aria-label="Close">×</button><button id="prev" class="nav prev" aria-label="Previous">‹</button><img id="big" alt=""><button id="next" class="nav next" aria-label="Next">›</button><div class="viewbar"><span id="caption"></span><a id="download" class="download" download>Download photo ↓</a></div></div>
+<script src="/app.js"></script>
 </body></html>
